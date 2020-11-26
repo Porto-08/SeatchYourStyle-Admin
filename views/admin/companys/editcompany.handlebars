@@ -1,0 +1,55 @@
+<div class="container ml-5">
+    <div class="card bg-info">
+        <div class="card-header text-white">
+            <h2>Editar Empresa</h2>
+        </div>
+
+        <div class="card-body bg-dark text-white">
+            <form action="/admin/editcompany" method="post">
+                <input type="hidden" name="id" id="{{companys._id}}" value="{{companys._id}}"> <!-- Input invisivel para recuperar o id da categoria. -->
+
+
+                <label class="h5" for="name"> Nome do Dono  </label>
+                    <input class="form-control" type="text" name="name" id="name" value="{{companys.name}}">
+                {{#each err_name}}
+                    <div class="h6 mt-2 ml-1 text-danger">
+                        {{text}}
+                    </div>
+                {{else}}
+
+                {{/each}}
+                <label class="h5 mt-4" for="company"> Nome da Empresa </label> <!-- Slug é a URLm ou link para a tal categoria.-->
+                    <input class="form-control" type="text" name="company" id="company" value="{{companys.company}}">
+                {{#each err_company}}
+                    <div class="h6 mt-2 ml-1 text-danger">
+                        {{text}}
+                    </div>
+                {{else}}
+
+                {{/each}}
+
+                <label class="h5 mt-4" for="payment"> Quanto Será Pago?</label> <!-- Slug é a URLm ou link para a tal categoria.-->
+                    <input class="form-control" type="number" name="payment" id="payment" value="{{companys.payment}}">
+                {{#each err_payment}}
+                    <div class="h6 mt-2 ml-1 text-danger">
+                        {{text}}
+                    </div>
+                {{else}}
+
+                {{/each}}
+
+                <label class="h5 mt-4" for="time"> Quanto Tempo?</label> <!-- Slug é a URLm ou link para a tal categoria.-->
+                    <input class="form-control" type="number" name="time" id="time" value="{{companys.time}}">
+                {{#each err_time}}
+                    <div class="h6 mt-2 ml-1 text-danger">
+                        {{text}}
+                    </div>
+                {{else}}
+
+                {{/each}}
+                
+                <button  type="submit" class="btn btn-success mt-3">Editar</button>
+            </form>
+        </div>
+    </div>
+</div>

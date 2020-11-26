@@ -1,0 +1,79 @@
+
+    <div class="">
+        <h2>Controle de Admins
+            <small class="text-info">| Alguem foi demitido?</small>
+        </h2>
+    </div>
+
+    <hr>
+
+    <a href="/admin/register">
+        <button class=" mb-3 btn btn-outline-info">
+            Novo Admin      
+        </button>
+    </a>
+
+    <section id="allUsers" class="text-white">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card ">
+                    <div class="card-header bg-info">
+                        <h2>Todos os Admins: </h2>
+                        <small>Você pode excluir um Admin, mas não pode errar!</small>
+                    </div>
+                    
+                
+                
+                    <div class="card-body bg-dark">
+                        <table class="table table-dark table-hover table-reponsive-sm">
+                            <thead>
+                                <tr>
+                                    <th class="h4">Id</th>
+                                    <th class="h4">Nome</th>
+                                    <th class="h4">Email</th>
+                                    <th class="h4">Excluir</th>
+                                </tr>
+                            </thead>
+                            
+                            <tbody>
+                                {{#each admins}}
+                                    <tr>
+                                        <td>
+                                            {{_id}}
+                                        </td>
+
+                                        <td>
+                                            {{name}}
+                                        </td>
+
+                                        <td>
+                                            {{email}}
+                                        </td>
+
+                                        <td>
+                                            <form action="/config/deleteadmin/{{_id}}" class="d-inline" method="post">
+                                                <input type="hidden" name="id" id="{{_id}}">
+                                                <button type="submit" class="btn btn-outline-danger">
+                                                    <i class="far fa-trash-alt"></i>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+
+                                    
+                                {{else}}
+                                    <tr>
+                                        <td>
+                                            Sem Admins Registrados
+                                        </td>
+                                    </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>                
+            </div>
+        </div>
+    </section>
+</section>

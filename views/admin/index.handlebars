@@ -1,0 +1,122 @@
+
+<div class="mb-4">
+    <h2 class="container">
+        Dashboard 
+        <small class="text-info"> | Confira os dados do Projeto!</small>
+    </h2>
+</div>
+
+<hr>
+
+
+<div id="users" class="container">
+    <div class="text-center">
+        <div class="row">
+            <div class="col-sm-12 text-white">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <div class="bg-info card-header">
+                                <h4>Serviços</h4>
+                            </div>
+                            <div class="card-body bg-dark">
+                                <p><strong>Nº Serviços:</strong></p>
+                                <h2 class="">
+                                    {{categories.length}}
+                                </h2>
+                                <a href="/admin/addcategories">
+                                    <button class="btn btn-outline-info mt-3">
+                                        Novo Serviço       
+                                    </button>
+                                </a>
+                                <br>
+                                <a href="/admin/categories">
+                                    <button class="btn btn-outline-info mt-3">
+                                        Ver Serviços      
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <div class="card-header bg-info">
+                                <h4>Usuarios</h4>
+                            </div>
+                            <div class="card-body bg-dark">
+                                <h2 class="">
+                                    <p>Analise dos Usuarios</p>
+                                    <a href="/admin/users">
+                                        <button class="btn btn-outline-info mt-3">
+                                            IR      
+                                        </button>
+                                    </a>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <div class="card-header bg-info">
+                                <h4>Cabelereiros</h4>
+                            </div>
+                            <div class="card-body bg-dark">
+                                <h2 class="">
+                                    <p>Analise dos Cabelereiros</p>
+                                    <a href="/admin/stylist">
+                                        <button class="btn btn-outline-info mt-3">
+                                            IR      
+                                        </button>
+                                    </a>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="partners" class="container ml-5">
+    <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-header bg-info">
+                        <h4>
+                            Patrocinadores do Mês
+                        </h4>
+                    </div>
+
+                    <div class="card-body bg-dark">
+                        <h5 class="mt-2 ml-4">
+                            Veja os Patrocinadores, por quanto tempo estiveram conosco e quanto pagaram!
+                        <h5>
+                        <a href="/admin/company">
+                                <button class="btn btn-outline-info">
+                                        Ver      
+                                </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-header bg-info">
+                        <h4>Publicidades</h4>
+                    </div>
+                    <div class="card-body bg-dark">
+                            <h5 class="mt-2 ml-4">Vejas as formas de anuncios disponiveis, e adicione, exclua e edite!</h5>
+                            <a href="/admin/publicity">
+                                <button class="btn btn-outline-info">
+                                    IR      
+                                </button>
+                            </a>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>

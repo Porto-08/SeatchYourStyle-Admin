@@ -1,0 +1,52 @@
+<div class="container ml-5">
+    <div class="card bg-info">
+        <div class="card-header text-white">
+            <h2>Adicionar nova Empresa</h2>
+        </div>
+
+        <div class="card-body bg-dark text-white">
+            <form action="/admin/addcompany" method="post">
+                <label class="h5" for="name"> Nome do Dono  </label>
+                    <input class="form-control" type="text" name="name" id="name" placeholder="Nome">
+                {{#each err_name}}
+                    <div class="h6 mt-2 ml-1 text-danger">
+                        {{text}}
+                    </div>
+                {{else}}
+
+                {{/each}}
+                <label class="h5 mt-4" for="company"> Nome da Empresa </label> <!-- Slug é a URLm ou link para a tal categoria.-->
+                    <input class="form-control" type="text" name="company" id="company" placeholder="Empresa...">
+                {{#each err_company}}
+                    <div class="h6 mt-2 ml-1 text-danger">
+                        {{text}}
+                    </div>
+                {{else}}
+
+                {{/each}}
+
+                <label class="h5 mt-4" for="payment"> Quanto Será Pago?</label> <!-- Slug é a URLm ou link para a tal categoria.-->
+                    <input class="form-control" type="number" name="payment" id="payment" placeholder="Em Reais..., apenas o Valor cheio!">
+                {{#each err_payment}}
+                    <div class="h6 mt-2 ml-1 text-danger">
+                        {{text}}
+                    </div>
+                {{else}}
+
+                {{/each}}
+
+                <label class="h5 mt-4" for="time"> Quanto Tempo?</label> <!-- Slug é a URLm ou link para a tal categoria.-->
+                    <input class="form-control" type="number" name="time" id="time" placeholder="Em meses....">
+                {{#each err_time}}
+                    <div class="h6 mt-2 ml-1 text-danger">
+                        {{text}}
+                    </div>
+                {{else}}
+
+                {{/each}}
+                
+                <button  type="submit" class="btn btn-success mt-3">Adicionar DinDin</button>
+            </form>
+        </div>
+    </div>
+</div>

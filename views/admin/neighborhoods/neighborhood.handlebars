@@ -1,0 +1,86 @@
+    
+    <div class="container">
+            <h2>
+                Bairros
+                <small class="text-info"> | Confira os bairros do Projeto!</small>            
+            </h2>
+            
+            <hr>
+
+            <a href="/config/addneighborhood">
+                <button class="btn btn-outline-info mb-3">
+                    Novo Bairro       
+                </button>
+            </a>
+
+        <section id="allNeighborhoods" class="text-white mb-3">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card ">
+                        <div class="card-header bg-info">
+                            <h2>Todos os Bairros: </h2>
+                            <small>Você pode excluir ou editar um Bairro.</small>
+                        </div>
+                        
+                    
+                    
+                        <div class="card-body bg-dark">
+                            <table class="table table-dark table-hover table-reponsive-sm">
+                                <thead>
+                                    <tr>
+                                        <th class="h4">Nome</th>
+                                        <th class="h4">Sub-Distrito</th>
+                                        <th class="h4">Editar</th>
+                                        <th class="h4">Excluir</th>
+                                    </tr>
+                                </thead>
+                                
+                                <tbody>
+                                    {{#each neighborhood}}
+                                        <tr>
+
+                                            <td>
+                                                {{name}}
+                                            </td>
+
+                                            <td>
+                                                {{subdistrict}}
+                                            </td>
+
+                                            <td>
+                                                <a href="/config/editneighborhood/{{_id}}">
+                                                    <button class="btn btn-outline-info">
+                                                        <i class="far fa-edit"></i>
+                                                    </button>
+                                                </a>
+                                            </td>
+
+                                            <td>
+                                                <form action="/config/deleteneighborhood/{{_id}}" class="d-inline" method="post">
+                                                    <input type="hidden" name="id" id="{{_id}}">
+                                                    <button type="submit" class="btn btn-outline-danger">
+                                                        <i class="far fa-trash-alt"></i>
+                                                    </button>
+                                                </form>
+                                            </td>
+                                        </tr>
+
+                                        
+                                    {{else}}
+                                        <tr>
+                                            <td>
+                                                <h3>Sem Bairros Registrados!</h3>
+                                            </td>
+                                        </tr>
+                                    {{/each}}
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>                
+                </div>
+            </div>
+        </section>
+    </div>
+
+

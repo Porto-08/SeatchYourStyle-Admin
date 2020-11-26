@@ -1,0 +1,58 @@
+
+<div class="container">
+
+   <h2>Publicidade</h2>
+
+   <hr>
+
+
+   <a href="/admin/addpublicity">
+        <button class="btn btn-outline-info">
+            Nova Publicidade       
+        </button>
+    </a>
+
+    {{#each publicity}}
+        <div class="card mt-4 mb-2 bg-info  text-white  ">
+            <div class="card-header">
+                <h4>{{name}}</h4>
+            </div>
+
+            <div class="card-body bg-dark">
+                <span class="h6">
+                    Tipo: {{type}}
+                </span>
+                <br>
+
+                <span class="h6">
+                     Descrição:
+                    {{description}}
+                </span>
+                <br>
+
+                <span class="h6">
+                    Preço: {{price}}
+                </span>
+                <br>
+                <br>
+                <a href="/admin/editpublicity/{{_id}}">
+                    <button class="btn btn-outline-info mt-2 mb-2">
+                        <i class="far fa-edit"></i>
+                    </button>
+                </a>
+                
+                <form action="/admin/deletepublicity/{{_id}}" class="d-inline" method="post">
+                        <input type="hidden" name="id" id="{{_id}}">
+                        <button type="submit" class="btn btn-outline-danger">
+                            <i class="far fa-trash-alt"></i>
+                        </button>
+                </form>
+            </div>            
+        </div>
+        
+    {{else}}
+        <h4 class="mt-3">Nenhuma Publicidade registrada</h4>
+    {{/each}}
+
+</div>
+

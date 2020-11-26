@@ -1,0 +1,34 @@
+<div class="container ml-5">
+    <div class="card bg-info">
+        <div class="card-header text-white">
+            <h2>Editar novo Bairro</h2>
+        </div>
+
+        <div class="card-body bg-dark text-white">
+            <form action="/config/editneighborhood" method="post">
+                <input type="hidden" name="id" id="{{neighborhood._id}}" value="{{neighborhood._id}}">
+
+                <label class="h5" for="name"> Nome </label>
+                    <input class="form-control" type="text" name="name" id="name" value="{{neighborhood.name}}">
+                {{#each err_name}}
+                    <div class="h6 mt-2 ml-1 text-danger">
+                        {{text}}
+                    </div>
+                {{else}}
+
+                {{/each}}
+                <label class="h5 mt-4" for="company"> Sub-Distrito </label> <!-- Slug é a URLm ou link para a tal categoria.-->
+                    <input class="form-control" type="text" name="subdistrict" id="subdistrict" value="{{neighborhood.subdistrict}}">
+                {{#each err_subdistrict}}
+                    <div class="h6 mt-2 ml-1 text-danger">
+                        {{text}}
+                    </div>
+                {{else}}
+
+                {{/each}}
+                
+                <button  type="submit" class="btn btn-success mt-3">Editar Bairro</button>
+            </form>
+        </div>
+    </div>
+</div>

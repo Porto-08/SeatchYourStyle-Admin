@@ -1,0 +1,32 @@
+
+    <div class="card bg-info">
+        <div class="card-header text-white">
+            <h2>Editar Categoria de Serviços</h2>
+        </div>
+
+        <div class="card-body bg-dark text-white">
+            <form action="/admin/editcategories" method="post">
+                <input type="hidden" name="id" id="{{categories._id}}" value="{{categories._id}}"> <!-- Input invisivel para recuperar o id da categoria. -->
+                <label class="h5" for="name"> Nome </label>
+                    <input class="form-control" type="text" name="name" id="name" value="{{categories.name}}">
+                {{#each err_name}}
+                    <div class="h6 mt-2 ml-1 text-danger">
+                        {{text}}
+                    </div>
+                {{else}}
+
+                {{/each}}
+                <label class="h5 mt-4" for="slug"> Slug </label> <!-- Slug é a URLm ou link para a tal categoria.-->
+                    <input class="form-control" type="text" name="slug" id="slug" value="{{categories.slug}}">
+                {{#each err_slug}}
+                    <div class="h6 mt-2 ml-1 text-danger">
+                        {{text}}
+                    </div>
+                {{else}}
+
+                {{/each}}
+
+                <button  type="submit" class="btn btn-success mt-3">Editar</button>
+            </form>
+        </div>
+    </div>

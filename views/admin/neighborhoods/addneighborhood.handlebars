@@ -1,0 +1,32 @@
+<div class="container ml-5">
+    <div class="card bg-info">
+        <div class="card-header text-white">
+            <h2>Adicionar novo Bairro</h2>
+        </div>
+
+        <div class="card-body bg-dark text-white">
+            <form action="/config/addneighborhood" method="post">
+                <label class="h5" for="name"> Nome </label>
+                    <input class="form-control" type="text" name="name" id="name" placeholder="Vila Zatt, Vila ema...">
+                {{#each err_name}}
+                    <div class="h6 mt-2 ml-1 text-danger">
+                        {{text}}
+                    </div>
+                {{else}}
+
+                {{/each}}
+                <label class="h5 mt-4" for="company"> Sub-Distrito </label> <!-- Slug é a URLm ou link para a tal categoria.-->
+                    <input class="form-control" type="text" name="subdistrict" id="subdistrict" placeholder="Pirituba, Vila Prudente...">
+                {{#each err_subdistrict}}
+                    <div class="h6 mt-2 ml-1 text-danger">
+                        {{text}}
+                    </div>
+                {{else}}
+
+                {{/each}}
+                
+                <button  type="submit" class="btn btn-success mt-3">Adicionar Bairro</button>
+            </form>
+        </div>
+    </div>
+</div>

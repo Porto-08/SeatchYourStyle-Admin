@@ -1,0 +1,55 @@
+<div class="container mb-5 ml-5 ">
+    <div class="card bg-info">
+        <div class="card-header text-white">
+            <h2>Nova Publicidade</h2>
+        </div>
+
+        <div class="card-body bg-dark text-white">
+            <form action="/admin/addpublicity" method="post">
+                <label class="h5" for="nome"> Nome </label>
+                    <input class="form-control" type="text" name="name" id="name" placeholder="Qual o nome?">
+                    {{#each err_name}}
+                        <div class="h6 mt-2 ml-1 text-danger">
+                            {{text}}
+                        </div>
+                    {{else}}
+
+                    {{/each}}
+                
+                <label class="h5 mt-2" for="type">  Tipo </label>
+                    <input class="form-control" type="text" name="type" id="type" placeholder="Pra que serve?">                
+                    {{#each err_type}}
+                        <div class="h6 mt-2 ml-1 text-danger">
+                            {{text}}
+                        </div>
+                    {{else}}
+
+                    {{/each}}
+                
+                <label class="h5 mt-2" for="description"> Descrição </label>
+                    <textarea class="form-control" type="text" name="description" id="description" placeholder="Como funciona?"></textarea>    
+                    {{#each err_description}}
+                        <div class="h6 mt-2 ml-1 text-danger">
+                            {{text}}
+                        </div>
+                    {{else}}
+
+                    {{/each}}
+                
+                <label class="h5 mt-2" for="price"> Preço </label>
+                    <input class="form-control" type="number" name="price" id="price" placeholder="$$$">
+                    {{#each err_price}}
+                        <div class="h6 mt-2 ml-1 text-danger">
+                            {{text}}
+                        </div>
+                    {{else}}
+
+                    {{/each}}
+                
+                <button  type="submit" class="btn btn-success mt-3">Adicionar</button>
+            </form>
+        </div>
+    </div>
+</div>
+    
+

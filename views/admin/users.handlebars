@@ -1,0 +1,96 @@
+
+<section id="registered">
+    <section id="registered-number">
+        <div class="row">
+            <div class="col-sm-12 text-white">
+                <div class="card justify-content-center">
+                    <div class="bg-info card-header">
+                        <h2>Usuarios</h2>
+                    </div>
+                    <div class="card-body bg-dark text-center">
+                        <h4>Totais de Usuarios Cadastrados:</h4>
+                        <h2 class="">
+                            {{users.length}}
+                        </h2>
+
+                        <h4>Usuarios do Ultimos mês:</h4>
+                        <h2 class="">
+                            {{users.length}}
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <section id="allUsers" class="text-white">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card ">
+                    <div class="card-header bg-info">
+                        <h2>Todos os Usuarios: </h2>
+                        <small>Você pode excluir um Usuario, mas não pode errar!</small>
+                    </div>
+                    
+                
+                
+                    <div class="card-body bg-dark">
+                        <table class="table table-dark table-hover table-reponsive-sm">
+                            <thead>
+                                <tr>
+                                    <th class="h4">Id</th>
+                                    <th class="h4">Nome</th>
+                                    <th class="h4">Email</th>
+                                    <th class="h4">Telefone</th>
+                                    <th class="h4">Excluir</th>
+                                </tr>
+                            </thead>
+                            
+                            <tbody>
+                                {{#each users}}
+                                    <tr>
+                                        <td>
+                                            {{_id}}
+                                        </td>
+
+                                        <td>
+                                            {{name}}
+                                        </td>
+
+                                        <td>
+                                            {{email}}
+                                        </td>
+
+                                        <td>
+                                            {{phone}}
+                                        </td>
+
+                                        <td>
+                                            <form action="/admin/deleteuser/{{_id}}" class="d-inline" method="post">
+                                                <input type="hidden" name="id" id="{{_id}}">
+                                                <button type="submit" class="btn btn-outline-danger">
+                                                    <i class="far fa-trash-alt"></i>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+
+                                    
+                                {{else}}
+                                    <tr>
+                                        <td>
+                                            Sem Usuarios Registrados
+                                        </td>
+                                    </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>                
+            </div>
+        </div>
+    </section>
+</section>

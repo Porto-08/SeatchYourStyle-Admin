@@ -1,0 +1,34 @@
+<div class="container ml-5">
+    <div class="card bg-info">
+        <div class="card-header text-white">
+            <h2>Adicionar nova Categoria de Serviços</h2>
+        </div>
+
+        <div class="card-body bg-dark text-white">
+            <form action="/admin/addcategories" method="post">
+                <label class="h5" for="name"> Nome </label>
+                    <input class="form-control" type="text" name="name" id="name" placeholder="Nome">
+                {{#each err_name}}
+                    <div class="h6 mt-2 ml-1 text-danger">
+                        {{text}}
+                    </div>
+                {{else}}
+
+                {{/each}}
+                <label class="h5 mt-4" for="slug"> Slug </label> <!-- Slug é a URLm ou link para a tal categoria.-->
+                    <input class="form-control" type="text" name="slug" id="slug" placeholder="Slug">
+                {{#each err_slug}}
+                    <div class="h6 mt-2 ml-1 text-danger">
+                        {{text}}
+                    </div>
+                {{else}}
+
+                {{/each}}
+                
+                <button  type="submit" class="btn btn-success mt-3">Adicionar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+

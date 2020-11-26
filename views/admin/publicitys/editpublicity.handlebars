@@ -1,0 +1,56 @@
+    <div class="container mb-5 ml-5">
+        <div class="card bg-info">
+            <div class="card-header text-white">
+                <h2>Editar Publicidade</h2>
+            </div>
+
+            <div class="card-body  bg-dark text-white">
+                <form action="/admin/editpublicity" method="post">
+                    <input type="hidden" name="id" id="{{publicity._id}}" value="{{publicity._id}}"> <!-- Input invisivel para recuperar o id da categoria. -->
+
+                    <label class="h5" for="nome"> Nome </label>
+                        <input class="form-control" type="text" name="name" id="name" value="{{publicity.name}}">
+                        {{#each err_name}}
+                            <div class="h6 mt-2 ml-1 text-danger">
+                                {{text}}
+                            </div>
+                        {{else}}
+
+                        {{/each}}
+
+                    <label class="h5 mt-2" for="type">  Tipo </label>
+                        <input class="form-control" type="text" name="type" id="type" value={{publicity.type}}>
+                        {{#each err_type}}
+                            <div class="h6 mt-2 ml-1 text-danger">
+                                {{text}}
+                            </div>
+                        {{else}}
+
+                        {{/each}}
+
+                    <label class="h5 mt-2" for="description"> Descrição </label>
+                        <textarea class="form-control" type="text" name="description" id="description" value={{publicity.description}}></textarea>
+                        {{#each err_description}}
+                            <div class="h6 mt-2 ml-1 text-danger">
+                                {{text}}
+                            </div>
+                        {{else}}
+
+                        {{/each}}
+                    <label class="h5 mt-2" for="price"> Preço </label>
+                        <input class="form-control" type="number" name="price" id="price" value={{publicity.price}}>
+                        {{#each err_price}}
+                            <div class="h6 mt-2 ml-1 text-danger">
+                                {{text}}
+                            </div>
+                        {{else}}
+
+                        {{/each}}
+
+                    <button  type="submit" class="btn btn-success mt-3">Adicionar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+        
+
