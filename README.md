@@ -3,7 +3,7 @@
 
 A parte Administrativa foi desenvolvida para acompanhar os dados do Projeto SYS(Serach Your Style) e auxilar nas tomadas de decisões.
 
-
+(/indexpage.png?raw=true)
 
 
 # Iniciando o Projeto 
