@@ -1,7 +1,7 @@
 # Search-Your-Style-ADMIN
  Parte Administrativa do Projeto Search Your Style
 
-A parte Administrativa foi desenvolvida para acompanhar os dados do Projeto SYS(Serach Your Style) e auxilar nas tomadas de decisões.
+A parte Administrativa foi desenvolvida para acompanhar e monitorar os dados do Projeto SYS(Search Your Style) e auxilar nas tomadas de decisões.
 
 ![HomePage](https://user-images.githubusercontent.com/60657968/102420591-3b4c9c00-3fe1-11eb-9f37-4b69017e39db.png)
 
